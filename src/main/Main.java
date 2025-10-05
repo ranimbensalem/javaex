@@ -1,11 +1,15 @@
+package main;
+
+import entities.Animal;
+import entities.Zoo;
+
 public class Main {
     public static void main(String[] args) {
-        // Create some animals
-        Animal lion = new Animal("animal", "lion", 5, true);
+        Animal lion = new Animal("animal", "lion", -5, true);
         Animal tigger = new Animal("animal", "tigger", 3, true);
         Animal turtle = new Animal("animal", "turtle", 1, false);
         Animal lion1 = new Animal("animal", "lion", 6, true);
-        Zoo myZoo = new Zoo("zoo", "tunis", 2);
+        Zoo myZoo = new Zoo("", "tunis", 5);
         System.out.println("ajout lion: " + myZoo.addAnimal(lion));
         System.out.println("ajout tigger: " + myZoo.addAnimal(tigger));
         System.out.println("ajout torture: " + myZoo.addAnimal(turtle));
@@ -19,7 +23,7 @@ public class Main {
         myZoo2.addAnimal(new Animal("animal", "bear", 2, true));
         myZoo2.addAnimal(new Animal("animal", "lapin", 4, true));
         Zoo bigZoo = Zoo.comparerZoo(myZoo, myZoo2);
-        System.out.println("zoo avec beaucoup des animaux " + bigZoo.name);
+        System.out.println("zoo avec beaucoup des animaux " + bigZoo.getName());
         System.out.println("myZoo est plein: " + myZoo.isZooFull());
         System.out.println("myZoo2 est plein: " + myZoo2.isZooFull());
     }
