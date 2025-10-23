@@ -8,16 +8,8 @@ public class Terrestrial extends Animal {
         this.nbrLegs = nbrLegs;
     }
 
-    public int getNbrLegs() {
-        return nbrLegs;
-    }
-
-    public void setNbrLegs(int nbrLegs) {
-        this.nbrLegs = nbrLegs;
-    }
-
     @Override
     public String toString() {
-        return super.toString() + ", nbrLegs=" + nbrLegs;
+        return super.toString() + ", nbrLegs= " + nbrLegs;
     }
 }
