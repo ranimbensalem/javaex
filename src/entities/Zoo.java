@@ -59,7 +59,7 @@ public class Zoo {
             return false;
         }
         if (searchAnimal(animal) != -1) {
-            System.out.println("Animal existe déjà !");
+            System.out.println("Animal existe déjà");
             return false;
         }
         animals[animalCount] = animal;
@@ -90,6 +90,38 @@ public class Zoo {
 
     public static Zoo comparerZoo(Zoo z1, Zoo z2) {
         return z1.animalCount >= z2.animalCount ? z1 : z2;
+    }
+
+    private Aquatic[] aquaticAnimals = new Aquatic[10];
+    private int aquaticCount = 0;
+
+    public void addAquaticAnimal(Aquatic aquatic) {
+        aquaticAnimals[aquaticCount++] = aquatic;
+    }
+    public void showAquaticSwim() {
+        for (int i = 0; i < aquaticCount; i++) {
+            aquaticAnimals[i].swim();
+        }
+    }
+
+    public float getMaxPenguinDepth() {
+        float max = 0;
+        for (int i = 0; i < aquaticCount; i++) {
+            if (aquaticAnimals[i] instanceof Penguin) {
+                float d = ((Penguin) aquaticAnimals[i]).getSwimmingDepth();
+                if (d > max) max = d;
+            }
+        }
+        return max;
+    }
+    public void displayNumberByType() {
+        int penguins = 0, dolphins = 0;
+        for (int i = 0; i < aquaticCount; i++) {
+            if (aquaticAnimals[i] instanceof Penguin) penguins++;
+            if (aquaticAnimals[i] instanceof Dolphin) dolphins++;
+        }
+        System.out.println("Number of penguins: " + penguins);
+        System.out.println("Number of dolphins: " + dolphins);
     }
 
 
