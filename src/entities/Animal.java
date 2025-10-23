@@ -35,7 +35,7 @@ public class Animal {
 
     public void setAge(int age) {
         if (age < 0) {
-            System.out.println("Âge ne peut pas être négatif.");
+            System.out.println("Âge ne peut pas être négatiff");
         } else {
             this.age = age;
         }
